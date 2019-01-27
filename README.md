@@ -143,4 +143,6 @@ python -m apache_beam.examples.streaming_wordcount \
 
 [Apache Beam WordCount Examples](https://beam.apache.org/get-started/wordcount-example/)
 
-[](https://beam.apache.org/documentation/resources/learning-resources/)
+[Apache Beam Learning Resources](https://beam.apache.org/documentation/resources/learning-resources/)
+
+[Python Development Environments for Apache Beam on Google Cloud Platform](https://medium.com/google-cloud/python-development-environments-for-apache-beam-on-google-cloud-platform-b6f276b344df)
