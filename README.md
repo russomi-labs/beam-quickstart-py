@@ -64,10 +64,16 @@ Code: https://github.com/apache/beam/blob/master/sdks/python/apache_beam/example
 Link: https://beam.apache.org/get-started/wordcount-example/#wordcount-example
 
 ```bash
-python -m apache_beam.examples.wordcount --input YOUR_INPUT_FILE --output counts
+
+# DirectRunner
+python -m apache_beam.examples.wordcount \
+    --input gs://apache-beam-samples/shakespeare/* \
+    --output counts
 
 # As part of the initial setup, install Google Cloud Platform specific extra components.
-pip install apache-beam[gcp]
+# pip install apache-beam[gcp]
+
+
 python -m apache_beam.examples.wordcount --input gs://dataflow-samples/shakespeare/kinglear.txt \
                                          --output gs://YOUR_GCS_BUCKET/counts \
                                          --runner DataflowRunner \
@@ -76,6 +82,8 @@ python -m apache_beam.examples.wordcount --input gs://dataflow-samples/shakespea
 
 
 ```
+
+Code: https://github.com/apache/beam/blob/master/sdks/python/apache_beam/examples/wordcount.py
 
 ## DebuggingWordCount Example
 
