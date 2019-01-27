@@ -67,11 +67,19 @@ Link: https://beam.apache.org/get-started/wordcount-example/#wordcount-example
 
 # DirectRunner
 python -m apache_beam.examples.wordcount \
-    --input gs://apache-beam-samples/shakespeare/* \
+    --input gs://dataflow-samples/shakespeare/kinglear.txt \
     --output counts
 
 # As part of the initial setup, install Google Cloud Platform specific extra components.
 # pip install apache-beam[gcp]
+
+export GCP_PROJECT=$(gcloud config get-value core/project)
+export GCE_ZONE=$(gcloud config get-value compute/zone)
+
+export ENVIRONMENT=russo-dataflow-dev
+export ENVIRONMENT_NAME=$GCP_PROJECT'-'$ENVIRONMENT
+export GCS_BUCKET=$GCP_PROJECT'-'$ENVIRONMENT_NAME'-bucket'
+
 
 
 python -m apache_beam.examples.wordcount --input gs://dataflow-samples/shakespeare/kinglear.txt \
