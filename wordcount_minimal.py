@@ -69,6 +69,7 @@ def run(argv=None):
                         help='Input file to process.')
     parser.add_argument('--output',
                         dest='output',
+                        # CHANGE 1/5: The Google Cloud Storage path is required
                         # for outputting the results.
                         default='gs://YOUR_OUTPUT_BUCKET/AND_OUTPUT_PREFIX',
                         help='Output file to write results to.')
